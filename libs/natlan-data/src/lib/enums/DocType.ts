@@ -1,5 +1,5 @@
 export enum DocType {
   UNSPECIFIED = 'TYPE_UNSPECIFIED',
-  PLAIN_TEXT = 'PLAINT_TEXT',
+  PLAIN_TEXT = 'PLAIN_TEXT',
   HTML = 'HTML'
 }

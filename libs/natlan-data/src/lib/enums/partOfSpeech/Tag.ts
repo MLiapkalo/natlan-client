@@ -1,0 +1,16 @@
+export enum Tag {
+  UNKNOWN = 'Unknown',
+  ADJ = 'Adjective',
+  ADP = 'Adposition (preposition and postposition)',
+  ADV = 'Adverb',
+  CONJ = 'Conjunction',
+  DET = 'Determiner',
+  NOUN = 'Noun (common and proper)',
+  NUM = 'Cardinal number',
+  PRON = 'Pronoun',
+  PRT = 'Particle or other function word',
+  PUNCT = 'Punctuation',
+  VERB = 'Verb (all tenses and modes)',
+  X = 'Other: foreign words, typos, abbreviations',
+  AFFIX = 'Affix',
+}
