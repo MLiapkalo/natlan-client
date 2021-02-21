@@ -1,10 +1,23 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'natlan-workspace-root',
+  selector: 'nl-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'ng-natlan';
+  isLoading = false;
+  errors = null;
+
+  handleErrors(errors) {
+    console.log('errors', errors);
+  }
+
+  logResult(res) {
+    console.log(res);
+  }
+
+  handleLoadingStateChange(state) {
+    this.isLoading = state;
+  }
 }

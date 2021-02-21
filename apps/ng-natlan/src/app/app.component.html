@@ -1,0 +1,4 @@
+<div class='main-container'>
+  <nl-payload-form (loadingStateChange)='handleLoadingStateChange($event)' (payloadAnalyzed)='logResult($event)' (errorsCaught)='handleErrors($event)'></nl-payload-form>
+</div>
+<nl-loading-spinner *ngIf='isLoading'></nl-loading-spinner>
