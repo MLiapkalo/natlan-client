@@ -1,0 +1,54 @@
+<form
+  [formGroup]="form"
+  clrForm
+  clrLabelSize="1"
+  clrLayout="horizontal"
+  (ngSubmit)="send()"
+>
+  <clr-textarea-container formGroupName="document">
+    <input type="hidden" formControlName="type" />
+    <label>Text for processing</label>
+    <textarea
+      cols="100"
+      rows="10"
+      clrTextarea
+      formControlName="content"
+      required
+    ></textarea>
+    <clr-control-error>The text is required.</clr-control-error>
+  </clr-textarea-container>
+  <clr-checkbox-container formGroupName="features" clrInline>
+    <label>Features</label>
+    <clr-checkbox-wrapper>
+      <input type="checkbox" clrCheckbox formControlName="extractSyntax" />
+      <label>Extract syntax</label>
+    </clr-checkbox-wrapper>
+    <clr-checkbox-wrapper>
+      <input type="checkbox" clrCheckbox formControlName="extractEntities" />
+      <label>Extract entities</label>
+    </clr-checkbox-wrapper>
+    <clr-checkbox-wrapper>
+      <input
+        type="checkbox"
+        clrCheckbox
+        formControlName="extractDocumentSentiment"
+      />
+      <label>Extract document sentiment</label>
+    </clr-checkbox-wrapper>
+    <clr-checkbox-wrapper>
+      <input
+        type="checkbox"
+        clrCheckbox
+        formControlName="extractEntitySentiment"
+      />
+      <label>Extract entity sentiment</label>
+    </clr-checkbox-wrapper>
+    <clr-checkbox-wrapper>
+      <input type="checkbox" clrCheckbox formControlName="classifyText" />
+      <label>Classify text</label>
+    </clr-checkbox-wrapper>
+  </clr-checkbox-container>
+  <button [disabled]="!form.valid" class="btn btn-primary" type="submit">
+    Analyze
+  </button>
+</form>
