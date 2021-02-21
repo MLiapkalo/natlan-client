@@ -5,7 +5,7 @@
       "projectType": "application",
       "root": "apps/ng-natlan",
       "sourceRoot": "apps/ng-natlan/src",
-      "prefix": "natlan-workspace",
+      "prefix": "nl",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",

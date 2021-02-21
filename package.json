@@ -69,11 +69,21 @@
     "eslint": "7.10.0",
     "eslint-config-prettier": "6.0.0",
     "eslint-plugin-cypress": "^2.10.3",
+    "husky": "^4.3.8",
     "jest": "26.2.2",
     "jest-preset-angular": "8.3.2",
+    "lint-staged": "^10.5.4",
     "prettier": "2.2.1",
     "ts-jest": "26.4.0",
     "ts-node": "~9.1.1",
     "typescript": "~4.0.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.ts": ["eslint --fix", "prettier --write --no-editorconfig"]
   }
 }

@@ -14,7 +14,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "natlan-workspace",
+            "prefix": "nl",
             "style": "camelCase"
           }
         ],
@@ -22,10 +22,20 @@
           "error",
           {
             "type": "element",
-            "prefix": "natlan-workspace",
+            "prefix": "nl",
             "style": "kebab-case"
           }
-        ]
+        ],
+        "no-unused-vars": [
+          "error",
+          {
+            "vars": "all",
+            "args": "after-used",
+            "ignoreRestSiblings": false
+          }
+        ],
+        "arrow-parens": ["error", "as-needed"],
+        "space-infix-ops": "error"
       }
     },
     {
