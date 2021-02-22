@@ -16,8 +16,6 @@ import { finalize, tap } from 'rxjs/operators';
   templateUrl: './payload-form.component.html',
 })
 export class PayloadFormComponent {
-  prevErrors: ValidationErrors = null;
-
   @Output()
   loadingStateChange: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Output()
@@ -62,14 +60,7 @@ export class PayloadFormComponent {
   constructor(
     private readonly fb: FormBuilder,
     private readonly lang: NaturalLanguageService
-  ) {
-    this.featuresFormGroup.statusChanges.subscribe(() => {
-      if (this.prevErrors !== this.featuresFormGroup.errors) {
-        this.errorsCaught.emit(this.featuresFormGroup.errors);
-        this.prevErrors = this.featuresFormGroup.errors;
-      }
-    });
-  }
+  ) {}
 
   send() {
     this.lang
@@ -78,6 +69,9 @@ export class PayloadFormComponent {
         tap(() => this.loadingStateChange.emit(true)),
         finalize(() => this.loadingStateChange.emit(false))
       )
-      .subscribe(result => this.payloadAnalyzed.emit(result));
+      .subscribe(
+        result => this.payloadAnalyzed.emit(result),
+        error => this.errorsCaught.emit(error)
+      );
   }
 }
