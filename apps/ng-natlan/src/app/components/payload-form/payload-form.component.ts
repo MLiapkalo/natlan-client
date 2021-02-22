@@ -63,7 +63,7 @@ export class PayloadFormComponent {
     private readonly fb: FormBuilder,
     private readonly lang: NaturalLanguageService
   ) {
-    this.featuresFormGroup.statusChanges.pipe().subscribe(() => {
+    this.featuresFormGroup.statusChanges.subscribe(() => {
       if (this.prevErrors !== this.featuresFormGroup.errors) {
         this.errorsCaught.emit(this.featuresFormGroup.errors);
         this.prevErrors = this.featuresFormGroup.errors;

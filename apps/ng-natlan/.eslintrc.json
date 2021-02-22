@@ -35,7 +35,10 @@
           }
         ],
         "arrow-parens": ["error", "as-needed"],
-        "space-infix-ops": "error"
+        "space-infix-ops": "error",
+        "sort-imports": ["error", {
+          "ignoreDeclarationSort": true
+        }]
       }
     },
     {
