@@ -10,7 +10,7 @@ import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 @Injectable()
-export class ErrorInterceptor implements HttpInterceptor {
+export class HttpErrorsInterceptor implements HttpInterceptor {
   private readonly genericErrorMessage = 'Something went wrong';
 
   intercept(

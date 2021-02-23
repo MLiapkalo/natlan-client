@@ -27,6 +27,14 @@
             "scripts": []
           },
           "configurations": {
+            "local": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/ng-natlan/src/environments/environment.ts",
+                  "with": "apps/ng-natlan/src/environments/environment.local.ts"
+                }
+              ]
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -62,6 +70,9 @@
             "browserTarget": "ng-natlan:build"
           },
           "configurations": {
+            "local": {
+              "browserTarget": "ng-natlan:build:local"
+            },
             "production": {
               "browserTarget": "ng-natlan:build:production"
             }

@@ -9,7 +9,7 @@ import {
 } from '@angular/forms';
 import { AnnotateTextResponse, DocType } from '@natlan-workspace/natlan-data';
 import { NaturalLanguageService } from '../../natural-language/natural-language.service';
-import { finalize, tap } from 'rxjs/operators';
+import { finalize } from 'rxjs/operators';
 
 @Component({
   selector: 'nl-payload-form',
@@ -63,12 +63,10 @@ export class PayloadFormComponent {
   ) {}
 
   send() {
+    this.loadingStateChange.emit(true);
     this.lang
       .annotateText(this.form.value)
-      .pipe(
-        tap(() => this.loadingStateChange.emit(true)),
-        finalize(() => this.loadingStateChange.emit(false))
-      )
+      .pipe(finalize(() => this.loadingStateChange.emit(false)))
       .subscribe(
         result => this.payloadAnalyzed.emit(result),
         error => this.errorsCaught.emit(error)

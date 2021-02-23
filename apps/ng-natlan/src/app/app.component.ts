@@ -18,6 +18,7 @@ export class AppComponent {
   }
 
   handleLoadingStateChange(state) {
+    console.log(state);
     this.isLoading = state;
   }
 }

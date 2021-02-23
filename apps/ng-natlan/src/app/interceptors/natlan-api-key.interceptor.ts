@@ -6,7 +6,7 @@ import {
   HttpRequest,
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { natlanApiBase, natlanApiKey } from '../../utils';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class NatlanApiKeyInterceptor implements HttpInterceptor {
@@ -15,10 +15,10 @@ export class NatlanApiKeyInterceptor implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<unknown>> {
     return next.handle(
-      request.url.includes(natlanApiBase())
+      request.url.includes(environment.NATLAN_API_BASE)
         ? request.clone({
             setParams: {
-              key: natlanApiKey(),
+              key: environment.NATLAN_API_KEY,
             },
           })
         : request

@@ -10,6 +10,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PayloadFormComponent } from './components/payload-form/payload-form.component';
 import { LoadingSpinnerComponent } from './components/loading-spinner.component';
+import {
+  NaturalLanguageService,
+  defineNatLanImplementation,
+} from './natural-language';
 
 @NgModule({
   declarations: [AppComponent, PayloadFormComponent, LoadingSpinnerComponent],
@@ -21,7 +25,13 @@ import { LoadingSpinnerComponent } from './components/loading-spinner.component'
     ReactiveFormsModule,
     ClarityModule,
   ],
-  providers: [...HttpInterceptors],
+  providers: [
+    ...HttpInterceptors,
+    {
+      provide: NaturalLanguageService,
+      useClass: defineNatLanImplementation(),
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
