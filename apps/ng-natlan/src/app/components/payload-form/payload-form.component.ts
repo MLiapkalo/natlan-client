@@ -8,7 +8,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { AnnotateTextResponse, DocType } from '@natlan-workspace/natlan-data';
-import { NaturalLanguageService } from '../../natural-language/natural-language.service';
+import { NaturalLanguageService } from '../../services/natural-language';
 import { finalize } from 'rxjs/operators';
 
 @Component({

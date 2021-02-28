@@ -13,14 +13,21 @@ import { LoadingSpinnerComponent } from './components/loading-spinner.component'
 import {
   NaturalLanguageService,
   defineNatLanImplementation,
-} from './natural-language';
+} from './services/natural-language';
+import appRoutes from './app.routes';
+import { HomeViewComponent } from './components/home-view/home-view.component';
 
 @NgModule({
-  declarations: [AppComponent, PayloadFormComponent, LoadingSpinnerComponent],
+  declarations: [
+    AppComponent,
+    PayloadFormComponent,
+    LoadingSpinnerComponent,
+    HomeViewComponent,
+  ],
   imports: [
     HttpClientModule,
     BrowserModule,
-    RouterModule.forRoot([], { initialNavigation: 'enabled' }),
+    RouterModule.forRoot(appRoutes),
     BrowserAnimationsModule,
     ReactiveFormsModule,
     ClarityModule,

@@ -1,4 +1,4 @@
-import { environment } from '../../environments/environment';
+import { environment } from '../../../environments/environment';
 import { NaturalLanguageMockService } from './natural-language.mock.service';
 import { NaturalLanguageService } from './natural-language.service';
 

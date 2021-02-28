@@ -5,7 +5,7 @@ import {
   AnnotateTextRequest,
   AnnotateTextResponse,
 } from '@natlan-workspace/natlan-data';
-import { environment } from '../../environments/environment';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',

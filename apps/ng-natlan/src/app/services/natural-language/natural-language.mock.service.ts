@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { AnnotateTextResponse } from '@natlan-workspace/natlan-data';
 import { delay } from 'rxjs/operators';
-import responseMock from '../shared/mocks/response-data.mock';
+import responseMock from '../../shared/mocks/response-data.mock';
 
 @Injectable({
   providedIn: 'root',
