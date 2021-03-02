@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { distinctUntilChanged, map } from 'rxjs/operators';
 
 @Injectable()
 export class StoreService<T> {
@@ -26,5 +27,9 @@ export class StoreService<T> {
           }
         : delta
     );
+  }
+
+  select<R>(selector: (a: T) => R): Observable<R> {
+    return this.state.pipe(distinctUntilChanged(), map(selector));
   }
 }

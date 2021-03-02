@@ -16,6 +16,7 @@ import {
 } from './services/natural-language';
 import appRoutes from './app.routes';
 import { HomeViewComponent } from './components/home-view/home-view.component';
+import { State, StoreService, getInitialState } from './services/store';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,10 @@ import { HomeViewComponent } from './components/home-view/home-view.component';
   ],
   providers: [
     ...HttpInterceptors,
+    {
+      provide: StoreService,
+      useValue: new StoreService<State>(getInitialState()),
+    },
     {
       provide: NaturalLanguageService,
       useClass: defineNatLanImplementation(),
